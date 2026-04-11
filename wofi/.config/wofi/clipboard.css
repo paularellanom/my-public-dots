@@ -1,0 +1,20 @@
+/* Estilo específico para el menú de cliphist */
+window {
+    margin: 10px;
+    border: 2px solid #b48ead; /* Color púrpura de Nord para diferenciarlo */
+    background-color: #2e3440;
+}
+
+#entry {
+    padding: 5px;
+}
+
+#entry:selected {
+    background-color: #4c566a; /* Un gris un poco más claro */
+}
+
+#text {
+    font-family: 'JetBrainsMono Nerd Font';
+    font-size: 11px; /* Letra un poco más pequeña para ver más historial */
+    color: #eceff4;
+}

@@ -1,0 +1,47 @@
+[manager]
+# Configuración de ordenamiento
+sort_by        = "mtime"     # Ordenar por fecha de modificación (Modification Time)
+sort_sensitive = false       # No distinguir entre mayúsculas y minúsculas
+sort_reverse   = true        # True para que los más recientes aparezcan arriba
+sort_dir_first = true        # Mantener las carpetas arriba de los archivos
+
+[opener]
+# Definición de Okular (formato de secuencia para evitar errores)
+okular = [
+    { run = 'okular "$@"', desc = "Okular", detach = true }
+]
+# El editor (siempre debe ser una lista [])
+edit = [
+    { run = 'nvim "$@"', block = true, for = "unix" }
+]
+
+# gThumb (ahora como secuencia [])
+gthumb = [
+    { run = 'gthumb "$@"', desc = "Abrir con gThumb", detach = true }
+]
+
+# VLC (ahora como secuencia [])
+vlc = [
+    { run = 'vlc --aout=alsa "$@"', desc = "VLC Media Player", detach = true }
+]
+
+[open]
+rules = [
+# Regla para PDFs
+    { mime = "application/pdf", use = "okular" },
+    # Usar gthumb para imágenes
+    { mime = "image/*", use = "gthumb" },
+    
+    # Usar vlc para videos
+    { mime = "video/*", use = "vlc" },
+
+  # Abrir archivos de texto (incluye .md)
+    { mime = "text/*", use = "edit" },
+    
+    # Abrir archivos JSON o scripts (importante para .sh)
+    { mime = "application/x-shellscript", use = "edit" },
+    { mime = "application/javascript", use = "edit" },
+
+    # Regla comodín (Fallback): Si nada de lo anterior coincide, intentar con nvim
+    { name = "*", use = "edit" }
+]

@@ -1,0 +1,51 @@
+* {
+    font-family: "Ubuntu Nerd Font", "Font Awesome 6 Free", Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    border: none;
+    border-radius: 0;
+}
+
+window#waybar {
+    background: rgba(43, 48, 59, 0.9);
+    color: #ffffff;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    background: transparent;
+    color: #ffffff;
+    border-bottom: 3px solid transparent;
+}
+
+#workspaces button.focused {
+    background-color: #64727D;
+    border-bottom: 3px solid #ffffff;
+}
+
+#cpu, #memory, #battery, #network, #pulseaudio, #clock, #custom-webcam {
+    padding: 0 10px;
+    margin: 0 4px;
+}
+
+#cpu { color: #2ecc71; }
+#memory { color: #9b59b6; }
+#battery { color: #f1c40f; }
+#network { color: #3498db; }
+#pulseaudio { color: #e67e22; }
+#clock { color: #ecf0f1; }
+
+#battery.critical {
+    background-color: #e74c3c;
+    color: #ffffff;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes blink {
+    to { background-color: #ffffff; color: #000000; }
+}

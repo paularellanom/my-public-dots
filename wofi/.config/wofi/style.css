@@ -1,0 +1,42 @@
+/* Wofi Nord Theme - vpul Edition */
+window {
+    margin: 5px;
+    border: 2px solid #88c0d0; /* Color Cyan de Nord */
+    background-color: #2e3440;
+    font-family: 'JetBrainsMono Nerd Font';
+    font-size: 13px;
+}
+
+#input {
+    margin: 5px;
+    border: none;
+    color: #d8dee9;
+    background-color: #3b4252;
+}
+
+#inner-box {
+    margin: 5px;
+    background-color: #2e3440;
+}
+
+#outer-box {
+    margin: 5px;
+    background-color: #2e3440;
+}
+
+#scroll {
+    margin: 5px;
+}
+
+#text {
+    margin: 5px;
+    color: #d8dee9;
+}
+
+#entry:selected {
+    background-color: #434c5e;
+}
+
+#text:selected {
+    color: #88c0d0; /* Resaltado en azul claro al seleccionar */
+}

@@ -1,0 +1,6 @@
+com.github.tchx84.Flatseal
+com.github.unrud.VideoDownloader
+com.system76.Popsicle
+org.jousse.vincent.Pomodorolm
+org.localsend.localsend_app
+us.zoom.Zoom
