@@ -23,3 +23,15 @@ $env.VDPAU_DRIVER = "va_gl"
 
 $env.EDITOR = "nvim"
 $env.VISUAL = "nvim"
+
+# Definir XDG_DATA_DIRS de forma segura
+let xdg_data = if ($env | get -o XDG_DATA_DIRS | is-empty) {
+    "/usr/local/share:/usr/share"
+} else {
+    $env.XDG_DATA_DIRS
+}
+
+$env.XDG_DATA_DIRS = ($xdg_data | split row ':' | append [
+    "/var/lib/flatpak/exports/share",
+    ($env.HOME | path join ".local/share/flatpak/exports/share")
+] | uniq | str join ':')
